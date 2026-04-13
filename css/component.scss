@@ -1,0 +1,173 @@
+$color-error-border: #FF6A6A;
+$color-error-text: #F34F4F;
+$background-color-error-text: #F9F9F9;
+$color-required-star: #FF6A6A;
+$color-help-text: #999;
+$color-border: #ccc;
+$color-border-hover: #999;
+$color-border-drag-over: #2196F3;
+$color-bg: #fafafa;
+$color-bg-drag-over: #e3f2fd;
+$color-text: #999;
+$color-text-drag-over: #2196F3;
+
+.itsa-fileuploadarea {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1.5em; /* keep space for help- and error-messages */
+    vertical-align: baseline;
+}
+
+.itsa-fileuploadarea-dropzone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+    padding: 2em;
+    border: 2px dashed $color-border;
+    border-radius: 4px;
+    background-color: $color-bg;
+    color: $color-text;
+    cursor: pointer;
+    text-align: center;
+    -webkit-transition: all 0.2s ease-out 0s;
+    -moz-transition: all 0.2s ease-out 0s;
+    -ms-transition: all 0.2s ease-out 0s;
+    -o-transition: all 0.2s ease-out 0s;
+    transition: all 0.2s ease-out 0s;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+}
+
+.itsa-fileuploadarea-dropzone:hover {
+    border-color: $color-border-hover;
+}
+
+.itsa-fileuploadarea-dropzone:focus {
+    border-color: $color-border-drag-over;
+    box-shadow: 0 0 0 1px $color-border-drag-over;
+}
+
+.itsa-fileuploadarea-drag-over {
+    border-color: $color-border-drag-over;
+    background-color: $color-bg-drag-over;
+    color: $color-text-drag-over;
+}
+
+.itsa-fileuploadarea-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.itsa-fileuploadarea-content {
+    font-size: 1em;
+    line-height: 1.4;
+    pointer-events: none;
+}
+
+.itsa-fileuploadarea-required::after {
+    content: "*";
+    position: absolute;
+    font-size: 2em;
+    top: 0.1em;
+    right: 0.2em;
+    color: $color-required-star;
+}
+
+.itsa-fileuploadarea-feedback-success::after {
+    content: "✓";
+    position: absolute;
+    font-size: 1.6em;
+    font-weight: bold;
+    top: 0.2em;
+    right: 0.3em;
+    color: #4CAF50;
+}
+
+.itsa-fileuploadarea-error {
+    border-color: $color-error-border !important;
+}
+
+.itsa-fileuploadarea-error-text {
+    white-space: nowrap;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: $color-error-text;
+    font-size: 0.8em;
+    line-height: 1em;
+    opacity: 1;
+    position: absolute;
+    z-index: 1;
+    background-color: $background-color-error-text;
+    border: 1px solid $color-error-border;
+    bottom: -1.3em;
+    left: 0;
+    padding: 0.15em 0.4em 0.1em;
+    -webkit-transition: all 0.2s ease-out 0s;
+    -moz-transition: all 0.2s ease-out 0s;
+    -ms-transition: all 0.2s ease-out 0s;
+    -o-transition: all 0.2s ease-out 0s;
+    transition: all 0.2s ease-out 0s;
+}
+
+.itsa-fileuploadarea-help-text {
+    white-space: nowrap;
+    color: $color-help-text;
+    font-size: 0.8em;
+    bottom: -1.3em;
+    left: 1px;
+    position: absolute;
+    z-index: 1;
+    padding: 0.15em 0.4em 0.1em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.itsa-fileuploadarea-progress {
+    display: block;
+    position: absolute;
+    width: 96%; /* IE8 */
+    width: calc(100% - 1em);
+    margin-left: -48%; /* IE8 */
+    margin-left: calc(-50% + 0.5em);
+    left: 50%;
+    overflow: hidden;
+    opacity: 1;
+    border: solid 1px #444;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 1em;
+    height: 0.5em;
+    bottom: 0.5em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* $progress-smooth-delay: "50ms"; */
+
+.itsa-fileuploadarea-progress-inner {
+    position: relative;
+    background-color: #444;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: margin-left 50ms linear;
+    -moz-transition: margin-left 50ms linear;
+    -ms-transition: margin-left 50ms linear;
+    -o-transition: margin-left 50ms linear;
+    transition: margin-left 50ms linear;
+}
+
+.itsa-fileuploadarea-progress.itsa-fileuploadarea-progress-completed {
+    -webkit-transition: opacity 0.5s ease-out 0.5s;
+    -moz-transition: opacity 0.5s ease-out 0.5s;
+    -ms-transition: opacity 0.5s ease-out 0.5s;
+    -o-transition: opacity 0.5s ease-out 0.5s;
+    transition: opacity 0.5s ease-out 0.5s;
+    opacity: 0;
+}
